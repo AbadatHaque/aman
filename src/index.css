@@ -1,15 +1,22 @@
 :root {
 /* Color tokens */
 --major: #2e7d32; /* green */
---minor: #f6c84c; /* yellow */
---patch: #e53935; /* red */
+--minor: #9f770b; /* yellow */
+--patch: #bf110e; /* red */
+
+
+
+/*
+--major: #2e7d32; 
+--minor: #f6c84c;
+--patch: #e53935;  red */
 
 
 --bg: #ffffff;
 --surface: #f7f7f8;
 --text: #111827;
---muted: #55606a;
---card-shadow: rgba(16,24,40,0.06);
+--card-shadow: rgba(16,24,40, 0.08);
+/* --card-shadow: rgba(16,24,40,0.06); */
 }
 /* Dark theme variables */
 :root.dark {
@@ -22,6 +29,11 @@
 --major: #3fb56b;
 --minor: #ffd658;
 --patch: #ff6b6b;
+
+/* --major: #3fb56b;
+--minor: #ffd658;
+--patch: #ff6b6b; */
+
 }
 
 /* Global reset */
@@ -222,4 +234,83 @@ a:focus, button:focus { outline: 3px solid rgba(255,255,255,0.08); outline-offse
   height: 20px;
   transition: all 0.3s ease;
   fill: var(--major);
+}
+
+
+
+
+.floating-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--major);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.floating-btn:hover {
+  background-color: var(--minor);
+  transform: scale(1.08);
+}
+
+.floating-btn svg {
+  width: 26px;
+  height: 26px;
+  fill: currentColor;
+}
+
+/* Dark mode contrast */
+:root.dark .floating-btn {
+  background-color: var(--major);
+  color: #fff;
+}
+
+
+
+
+/* Navbar link default */
+.nav-links a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+/* Active navbar link */
+.nav-links a.active {
+  color: var(--major);
+  font-weight: 700;
+  border-bottom: 2px solid var(--major);
+}
+
+/* Hover effect for all links */
+.nav-links a:hover {
+  color: var(--major);
+  border-bottom: 2px solid var(--major);
+}
+
+/* Mobile menu links */
+.mobile-menu a {
+  color: var(--text);
+  text-decoration: none;
+  padding: 0.75rem 0;
+  font-weight: 500;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu a.active {
+  color: var(--major);
+  font-weight: 700;
 }

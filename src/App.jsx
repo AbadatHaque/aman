@@ -1,25 +1,36 @@
 
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import Logo from '../public/logo.svg'
 import FAQ from './pages/FAQ'
+import emailjs from "@emailjs/browser";
 
-// import { useState, useEffect } from "react";
-// import Logo from "./logo.png"; // Replace with your logo path
 
  function Header({ dark, setDark }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
-
+ let current = "home";
+  const [activeSection, setActiveSection] = useState(current);
   // Sticky on scroll
   useEffect(() => {
     const handleScroll = () => {
       setIsSticky(window.scrollY > 50);
+
+      const sections = document.querySelectorAll("section[id]");
+    
+      sections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= 150 && rect.bottom >= 150) {
+          current = section.id;
+        }
+      });
+
+      setActiveSection(current);
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
   
 
   return (
@@ -94,19 +105,16 @@ import FAQ from './pages/FAQ'
       {/* Nav Links */}
       <nav
         className="nav-links"
-        // style={{
-        //   display: "flex",
-        //   gap: "1rem",
-        //   alignItems: "center",
-        //   transition: "all 0.3s ease",
-        // }}
       >
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#product">Product</a>
-        <a href="#testimonial">Testimonial</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact">Contact</a>
+    {["home", "about", "product", "testimonial", "faq", "contact"].map((id) => (
+          <a
+            key={id}
+            href={`#${id}`}
+            className={activeSection === id ? "active" : ""}
+          >
+            {id.charAt(0).toUpperCase() + id.slice(1)}
+          </a>
+        ))}
       
       </nav>
 
@@ -147,12 +155,16 @@ import FAQ from './pages/FAQ'
       {/* Mobile Menu Overlay */}
       {menuOpen && (
         <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
-        <a href="#home" onClick={() => setMenuOpen(false)}>Home</a>
-        <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
-        <a href="#product" onClick={() => setMenuOpen(false)}>Product</a>
-        <a href="#testimonial" onClick={() => setMenuOpen(false)}>Testimonial</a>
-        <a href="#faq" onClick={() => setMenuOpen(false)}>FAQ</a>
-        <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
+        {["home", "about", "product", "testimonial", "faq", "contact"].map((id) => (
+          <a
+            key={id}
+            href={`#${id}`}
+            className={activeSection === id ? "active" : ""}
+            onClick={() => setMenuOpen(false)}
+          >
+            {id.charAt(0).toUpperCase() + id.slice(1)}
+          </a>
+        ))}
           <a>
          <button
     className="theme-toggle"
@@ -215,74 +227,38 @@ export default function App() {
     document.documentElement.classList.toggle('dark', dark)
     localStorage.setItem('site-theme', dark ? 'dark' : 'light')
   }, [dark])
+    const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState("");
+  const formRef = useRef();
+
+    const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
+    emailjs
+      .sendForm(
+        "service_gttjqpq",   // replace with your EmailJS service ID
+        "template_wkcirvc",  // replace with your template ID
+        formRef.current,
+        "cm5FlUHqe7sOdP98h"    // replace with your public key
+      )
+      .then(
+        (result) => {
+          setLoading(false);
+          setSuccess("Message sent successfully!");
+          formRef.current.reset();
+        },
+        (error) => {
+          setLoading(false);
+          setSuccess("Failed to send message. Try again.");
+        }
+      );
+  };
 
   return (
     <div className="app-root">
-      {/* <header className="site-header">
-        <div className="brand">
-          <img src={Logo} alt="Logo" className="logo" />
-          <div>
-            <h1 className="site-title">Luminex Sparq Company</h1>
-            <p className="site-tag">Bagh Chingari — Igniting Trust with Quality Safety Matches</p>
-          </div>
-        </div>
-
-        <nav className="nav-links">
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#product">Product</a>
-          <a href="#testimonial">Testimonial</a>
-          <a href="#faq">FAQ</a>
-          <a href="#contact">Contact</a>
-        </nav>
-
-        <div className="controls">
-          <button
-            className="btn theme-toggle"
-            onClick={() => setDark(d => !d)}
-            aria-pressed={dark}
-            aria-label="Toggle dark mode"
-          >
-            {dark ? 'Light' : 'Dark'}
-          </button>
-        </div>
-      </header> */}
       <Header dark={dark} setDark={setDark}/>
 
       <main className="container">
-        {/* <section id="home" className="hero">
-          <h2>Welcome to Luminex Sparq Company</h2>
-          <p>
-            <strong>Bagh Chingari:</strong> Igniting Trust with Quality Safety Matches.
-          </p>
-          <p>
-            Bagh Chingari, a brand by <strong>Luminex Sparq Company</strong>, is a renowned manufacturer of premium safety matches and pure matti sticks, committed to delivering exceptional quality products that ignite trust.
-          </p>
-          <p>
-            Based in <strong>Sattur, Tamil Nadu, India</strong>, we pride ourselves on our expertise in crafting matches that burn with precision and safety.
-          </p>
-
-          <div className="home-features">
-            <h3>Our Key Features</h3>
-            <ul>
-              <li><strong>Superior Quality:</strong> Our matches are designed to burn with a single strike, ensuring convenience and reliability.</li>
-              <li><strong>Safety First:</strong> We prioritize safety in our manufacturing process, adhering to stringent quality controls to guarantee our products meet the highest standards.</li>
-              <li><strong>Pure Matti Sticks:</strong> Our matti sticks are made from the finest materials, ensuring a smooth and consistent burn.</li>
-            </ul>
-          </div>
-
-          <div className="home-reach">
-            <h3>Our Reach</h3>
-            <ul>
-              <li><strong>Pan-India Delivery:</strong> We deliver our products across India, ensuring timely and efficient service to our customers.</li>
-              <li><strong>Export:</strong> Our quality products have garnered international recognition, and we export to countries worldwide.</li>
-            </ul>
-          </div>
-
-          <p>
-            With a focus on <strong>quality, safety,</strong> and <strong>customer satisfaction</strong>, Bagh Chingari by Luminex Sparq Company has established itself as a trusted brand in the safety match industry. Our commitment to excellence and customer-centric approach has enabled us to build a loyal customer base, both domestically and internationally.
-          </p>
-        </section> */}
 <section
   id="home"
   className="home-section"
@@ -800,10 +776,8 @@ export default function App() {
         flexDirection: "column",
         gap: "15px",
       }}
-      onSubmit={(e) => {
-        e.preventDefault();
-        alert("Form submitted! We will contact you soon.");
-      }}
+      onSubmit={handleSubmit}
+       ref={formRef}
     >
       <input
         type="text"
@@ -859,6 +833,7 @@ export default function App() {
       />
 
       <div style={{ display: "flex", gap: "15px", flexWrap: "wrap" }}>
+
         <button
           type="submit"
           style={{
@@ -872,8 +847,10 @@ export default function App() {
             flex: "1",
           }}
         >
-          Send Message
+         {loading ? "Sending..." : "Send Message"}
         </button>
+
+
 
         <a
           href="https://wa.me/919360888472"
@@ -884,7 +861,7 @@ export default function App() {
             alignItems: "center",
             justifyContent: "center",
             backgroundColor: "var(--minor)",
-            color: "#000",
+            color: "var(--bg)",
             padding: "12px 20px",
             borderRadius: "8px",
             fontWeight: "600",
@@ -896,11 +873,29 @@ export default function App() {
           📱 WhatsApp Us
         </a>
       </div>
+       {success && <p>{success}</p>}
     </form>
   </div>
 </section>
 
       </main>
+   {/* Floating WhatsApp Button */}
+<a
+  href="https://wa.me/919360888472"
+  className="floating-btn"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Chat on WhatsApp"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 32 32"
+    fill="currentColor"
+  >
+    <path d="M16 .667A15.307 15.307 0 00.667 16 15.22 15.22 0 003.67 25.16L2 31.333l6.37-1.667A15.256 15.256 0 0016 31.333 15.333 15.333 0 0016 .667zm0 28.04a12.89 12.89 0 01-6.57-1.807l-.473-.283-3.78.987 1.007-3.6-.307-.48A12.792 12.792 0 1130.667 16a12.83 12.83 0 01-14.667 12.707z" />
+    <path d="M23.567 19.04c-.4-.2-2.367-1.167-2.73-1.3-.367-.133-.633-.2-.9.2s-1.033 1.3-1.267 1.567-.467.3-.867.1-1.693-.627-3.227-2a11.93 11.93 0 01-2.207-2.733c-.233-.4 0-.617.167-.817.173-.173.4-.467.6-.7a2.51 2.51 0 00.4-.667.76.76 0 00-.033-.733c-.1-.2-.9-2.133-1.233-2.933-.327-.8-.66-.687-.9-.7h-.767a1.47 1.47 0 00-1.066.5A4.52 4.52 0 008.5 12.1a7.8 7.8 0 00.5 3.333 17.81 17.81 0 006.567 7.467c2.4 1.467 3.333 1.6 4.533 1.367a3.82 3.82 0 002.6-1.833 3.117 3.117 0 00.2-1.833c-.133-.233-.4-.333-.833-.533z" />
+  </svg>
+</a>
 
       <footer className="site-footer">
         <p>© {new Date().getFullYear()} Luminex Sparq Company — Bagh Chingari.</p>
@@ -909,5 +904,4 @@ export default function App() {
   )
 }
 
-/* CSS additions */
 
