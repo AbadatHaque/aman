@@ -1,40 +1,101 @@
-import React from 'react'
-import { Card } from '../pages/_shared'
 
+export default function Home() {
+     return <section
+  id="home"
+  className="home-section"
+  style={{
+    padding: "80px 20px",
+    textAlign: "center",
+    backgroundColor: "var(--bg)",
+    color: "var(--text)",
+    transition: "all 0.3s ease",
+  }}
+>
+  <div style={{ maxWidth: "900px", margin: "0 auto" }}>
+    <h1
+      style={{
+        fontSize: "3rem",
+        color: "var(--major)",
+        fontWeight: "700",
+        marginBottom: "1rem",
+      }}
+    >
+      Luminex Sparq Company
+    </h1>
 
-export default function Home(){
-return (
-<div className="container mx-auto px-4 py-12">
-<div className="grid md:grid-cols-2 gap-8 items-center">
-<div>
-<h1 className="text-4xl font-bold">Luminex Sparq Company</h1>
-<p className="mt-4 text-lg text-slate-600 dark:text-slate-300">Igniting Trust with Quality Safety Matches. Based in Chennai, we craft premium safety matches that you can rely on.</p>
+    <p
+      style={{
+        fontSize: "1.2rem",
+        lineHeight: "1.8",
+        color: "var(--muted)",
+        marginBottom: "2rem",
+      }}
+    >
+      Welcome to <strong>Bagh Chingari</strong> — a leading innovation-driven
+      brand that blends technology, creativity, and sustainability to deliver
+      cutting-edge digital experiences. We specialize in web, mobile, and
+      product design solutions that help businesses grow faster and smarter.
+    </p>
 
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        gap: "20px",
+        flexWrap: "wrap",
+      }}
+    >
+      <div
+        style={{
+          backgroundColor: "var(--surface)",
+          border: "1px solid var(--major)",
+          borderRadius: "12px",
+          padding: "20px",
+          width: "260px",
+          boxShadow: "0 4px 12px var(--card-shadow)",
+        }}
+      >
+        <h3 style={{ color: "var(--minor)" }}>Innovation</h3>
+        <p style={{ color: "var(--text)" }}>
+          We focus on forward-thinking solutions that redefine how brands engage
+          with audiences.
+        </p>
+      </div>
 
-<div className="mt-6 flex gap-3">
-<a href="/contact" className="px-4 py-2 rounded bg-indigo-600 text-white">Contact Us</a>
-<a href={`https://wa.me/91${"7431007424"}`} className="px-4 py-2 rounded border">Chat WhatsApp</a>
-</div>
-</div>
+      <div
+        style={{
+          backgroundColor: "var(--surface)",
+          border: "1px solid var(--minor)",
+          borderRadius: "12px",
+          padding: "20px",
+          width: "260px",
+          boxShadow: "0 4px 12px var(--card-shadow)",
+        }}
+      >
+        <h3 style={{ color: "var(--major)" }}>Technology</h3>
+        <p style={{ color: "var(--text)" }}>
+          Using modern tools and frameworks, we build scalable and
+          high-performing digital systems.
+        </p>
+      </div>
 
-
-<div>
-<img src="/logo.png" alt="logo" className="w-64 h-64 object-contain mx-auto" />
-</div>
-</div>
-
-
-<section className="mt-12">
-<h2 className="text-2xl font-semibold">Our Products</h2>
-<p className="mt-2 text-slate-600 dark:text-slate-300">We supply high-quality safety matches for retailers and consumers across India.</p>
-
-
-<div className="mt-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-<Card title="Kitchen Matches">Reliable household matches.</Card>
-<Card title="Safety Matches">Premium safety matches built to strict quality standards.</Card>
-<Card title="Bulk Packs">Large quantity wholesale packs for shops and distributors.</Card>
-</div>
+      <div
+        style={{
+          backgroundColor: "var(--surface)",
+          border: "1px solid var(--patch)",
+          borderRadius: "12px",
+          padding: "20px",
+          width: "260px",
+          boxShadow: "0 4px 12px var(--card-shadow)",
+        }}
+      >
+        <h3 style={{ color: "var(--patch)" }}>Excellence</h3>
+        <p style={{ color: "var(--text)" }}>
+          Our commitment to quality ensures every product we build exceeds
+          client expectations.
+        </p>
+      </div>
+    </div>
+  </div>
 </section>
-</div>
-)
 }

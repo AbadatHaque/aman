@@ -1,13 +1,87 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- ✅ Basic Meta -->
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Luminex Sparq Company</title>
+    <meta
+      name="description"
+      content="Luminex Sparq is a trusted company delivering innovative lighting and energy solutions with advanced technology, sustainability, and design excellence."
+    />
+    <meta
+      name="keywords"
+      content="Luminex Sparq, lighting solutions,matches, smart lighting, LED innovation, sustainable energy, modern design, eco-friendly lights"
+    />
+    <meta name="author" content="sk abadat haque" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- ✅ Title -->
+    <title>Luminex Sparq | Innovative Lighting & Energy Solutions</title>
+
+    <!-- ✅ Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/logo.svg" />
+
+    <!-- ✅ Open Graph (Social Media Preview) -->
+    <meta property="og:title" content="Luminex Sparq | Innovative Lighting & Energy Solutions" />
+    <meta
+      property="og:description"
+      content="Experience cutting-edge smart lighting and sustainable solutions with Luminex Sparq."
+    />
+    <meta property="og:image" content="/thumbnail.jpg" />
+    <meta property="og:url" content="https://luminexsparq.com" />
+    <meta property="og:type" content="website" />
+
+    <!-- ✅ Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Luminex Sparq | Innovative Lighting & Energy Solutions" />
+    <meta
+      name="twitter:description"
+      content="Explore smart, sustainable lighting technologies by Luminex Sparq."
+    />
+    <meta name="twitter:image" content="/thumbnail.jpg" />
+
+    <!-- ✅ Canonical URL -->
+    <link rel="canonical" href="https://luminexsparq.com" />
+
+    <!-- ✅ Structured Data (Schema.org for Company Info) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Luminex Sparq",
+        "url": "https://luminexsparq.com",
+        "logo": "https://luminexsparq.com/logo.svg",
+        "sameAs": [
+          "https://www.linkedin.com/company/luminexsparq",
+          "https://twitter.com/luminexsparq",
+          "https://www.facebook.com/luminexsparq"
+        ],
+        "description": "Luminex Sparq provides smart lighting and sustainable energy solutions.",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+91-9360888472",
+          "contactType": "Customer Support",
+          "areaServed": "Worldwide",
+          "availableLanguage": ["English", "Hindi", "Bengali"]
+        }
+      }
+    </script>
+
+    <!-- ✅ Performance / Font Preloads -->
+    <link rel="preload" href="/fonts/Inter.woff2" as="font" type="font/woff2" crossorigin />
+
+    <!-- ✅ Styles (Vite injects CSS automatically in build) -->
   </head>
+
   <body>
+    <noscript>
+      Please enable JavaScript to view the website properly.
+    </noscript>
+
     <div id="root"></div>
+
+    <!-- ✅ Main Script -->
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
