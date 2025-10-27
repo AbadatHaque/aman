@@ -314,3 +314,9 @@ a:focus, button:focus { outline: 3px solid rgba(255,255,255,0.08); outline-offse
   color: var(--major);
   font-weight: 700;
 }
+
+
+.product-card div img:hover {
+  scale: .9;
+  transition: scale 2s  ;
+}

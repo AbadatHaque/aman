@@ -1,4 +1,4 @@
-
+import productImage from "../../public/product1.jpeg"
 
 export default function Product() {
     return   <section
@@ -63,8 +63,12 @@ export default function Product() {
           style={{
             background: "linear-gradient(135deg, var(--major), var(--minor))",
             height: "180px",
+            // overflow:"hidden"
           }}
-        ></div>
+
+        >
+          <img style={{opacity:"1", objectFit:"cover", width:"100%", height:"100%"}} src="../../public/product1.jpeg" alt="product image" />
+        </div>
         <div style={{ padding: "24px" }}>
           <h3 style={{ color: "var(--major)", fontSize: "1.4rem" }}>
             Safety Matches
@@ -111,8 +115,11 @@ export default function Product() {
           style={{
             background: "linear-gradient(135deg, var(--minor), var(--patch))",
             height: "180px",
+            // overflow:"hidden"
           }}
-        ></div>
+        >
+           <img  style={{opacity:"1", width:"100%", height:"100%",  }} src="../../public/product2.jpeg" alt="product image" />
+        </div>
         <div style={{ padding: "24px" }}>
           <h3 style={{ color: "var(--minor)", fontSize: "1.4rem" }}>
             Pure Matti Sticks

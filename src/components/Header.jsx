@@ -1,5 +1,5 @@
-import Logo from '../../public/logo.svg'
 import React, { useEffect, useState, useRef } from 'react'
+import pngLogo from "../../public/bg_remove_logo.png"
 
 
  export default  function Header() {
@@ -61,7 +61,7 @@ const [dark, setDark] = useState(() => {
     >
       {/* Brand */}
       <div className="brand" style={{ display: "flex", gap: "0.75rem", alignItems: "center" }}>
-        <img src={Logo} alt="Logo" className="logo" style={{ width: 48, height: 48 }} />
+        <img src={pngLogo} alt="Logo" className="logo" style={{ width: 48, height: 48 }} />
         <div>
           <h1 className="site-title" style={{ margin: 0, fontSize: "1.1rem", color: "var(--major)" }}>
             Luminex Sparq Company
@@ -78,37 +78,10 @@ const [dark, setDark] = useState(() => {
         className="hamburger"
       >
         <span
-        //   style={{
-        //     display: "block",
-        //     height: "3px",
-        //     width: "100%",
-        //     background: "var(--text)",
-        //     borderRadius: "2px",
-        //     transition: "0.3s",
-        //     transform: menuOpen ? "rotate(45deg) translate(5px, 5px)" : "none",
-        //   }}
         />
         <span
-        //   style={{
-        //     display: "block",
-        //     height: "3px",
-        //     width: "100%",
-        //     background: "var(--text)",
-        //     borderRadius: "2px",
-        //     transition: "0.3s",
-        //     opacity: menuOpen ? 0 : 1,
-        //   }}
         />
         <span
-        //   style={{
-        //     display: "block",
-        //     height: "3px",
-        //     width: "100%",
-        //     background: "var(--text)",
-        //     borderRadius: "2px",
-        //     transition: "0.3s",
-        //     transform: menuOpen ? "rotate(-45deg) translate(5px, -5px)" : "none",
-        //   }}
         />
       </button>
 
