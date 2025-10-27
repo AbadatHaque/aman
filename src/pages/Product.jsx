@@ -1,4 +1,6 @@
-import productImage from "../../public/product1.jpeg"
+import product1Image from "../../public/product1.jpeg"
+import product2Image from "../../public/product2.jpeg"
+
 
 export default function Product() {
     return   <section
@@ -67,7 +69,7 @@ export default function Product() {
           }}
 
         >
-          <img style={{opacity:"1", objectFit:"cover", width:"100%", height:"100%"}} src="../../public/product1.jpeg" alt="product image" />
+          <img style={{opacity:"1", objectFit:"cover", width:"100%", height:"100%"}} src={product1Image} alt="product image" />
         </div>
         <div style={{ padding: "24px" }}>
           <h3 style={{ color: "var(--major)", fontSize: "1.4rem" }}>
@@ -118,7 +120,7 @@ export default function Product() {
             // overflow:"hidden"
           }}
         >
-           <img  style={{opacity:"1", width:"100%", height:"100%",  }} src="../../public/product2.jpeg" alt="product image" />
+           <img  style={{opacity:"1", width:"100%", height:"100%",  }} src={product1Image} alt="product image" />
         </div>
         <div style={{ padding: "24px" }}>
           <h3 style={{ color: "var(--minor)", fontSize: "1.4rem" }}>
