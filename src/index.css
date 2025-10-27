@@ -320,3 +320,212 @@ a:focus, button:focus { outline: 3px solid rgba(255,255,255,0.08); outline-offse
   scale: .9;
   transition: scale 2s  ;
 }
+
+
+
+/* Footer  */
+
+/* Light & Dark mode Footer */
+/* .site-footer {
+  padding: 1rem;
+  text-align: center;
+  color: var(--muted);
+  border-top: 1px solid rgba(0,0,0,0.04);
+  background: linear-gradient(90deg, rgba(0,0,0,0.03), transparent);
+  transition: background 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+  .footer-content {
+          max-width: 1000px;
+          margin: 0 auto;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 0.4rem;
+          text-align: center;
+        }
+.site-footer p {
+  margin: 0;
+  font-size: 0.95rem;
+  letter-spacing: 0.4px;
+}
+
+.site-footer .brand {
+  font-weight: 600;
+  color: var(--major);
+}
+
+.site-footer .author {
+  color: var(--major);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.site-footer .author:hover {
+  color: var(--minor);
+  text-decoration: underline;
+  transform: scale(1.05);
+}
+
+.site-footer .footer-line {
+  position: relative;
+  width: 100%;
+  height: 2px;
+  margin-top: 1rem;
+  background: linear-gradient(90deg, var(--major), var(--minor), var(--patch));
+  animation: shimmer 3s infinite linear;
+}
+ .site-footer p {
+          margin: 0;
+          font-size: 0.95rem;
+          letter-spacing: 0.4px;
+        }
+
+@keyframes shimmer {
+  0% { filter: brightness(0.7); }
+  50% { filter: brightness(1.4); }
+  100% { filter: brightness(0.7); }
+} */
+ .site-footer {
+          background: linear-gradient(90deg, #0f0f0f, #1a1a1a, #0f0f0f);
+          color: #ccc;
+          font-family: 'Poppins', sans-serif;
+          border-top: 1px solid #2d2d2d;
+          box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.5);
+          position: relative;
+          padding: 1.5rem 1rem;
+        }
+
+        .footer-content {
+          max-width: 1000px;
+          margin: 0 auto;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 0.4rem;
+          text-align: center;
+        }
+
+        .site-footer p {
+          margin: 0;
+          font-size: 0.95rem;
+          letter-spacing: 0.4px;
+        }
+
+        .brand {
+          font-weight: 600;
+          color: #fff;
+        }
+
+        .author {
+          color: #4ade80;
+          text-decoration: none;
+          font-weight: 500;
+          transition: color 0.3s ease, transform 0.2s ease;
+        }
+
+        .author:hover {
+          color: #34d399;
+          text-decoration: underline;
+          transform: scale(1.05);
+        }
+
+        .footer-line {
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          height: 2px;
+          background: linear-gradient(90deg, #4ade80, #3b82f6, #9333ea);
+          animation: shimmer 3s infinite linear;
+        }
+
+        @keyframes shimmer {
+          0% { filter: brightness(0.7); }
+          50% { filter: brightness(1.4); }
+          100% { filter: brightness(0.7); }
+        }
+
+        /* Desktop enhancement */
+        @media (min-width: 768px) {
+          .footer-content {
+            flex-direction: row;
+            justify-content: space-between;
+            text-align: left;
+            padding: 0 2rem;
+          }
+
+          .site-footer {
+            padding: 1.5rem 3rem;
+          }
+
+          .site-footer p {
+            font-size: 1rem;
+          }
+        }
+
+
+
+
+/* 🌙 Dark Mode Footer */
+:root.dark .site-footer {
+  background: linear-gradient(90deg, #0b1020, #0f1724);
+  color: var(--muted);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  box-shadow: inset 0 2px 8px rgba(0,0,0,0.6);
+}
+
+:root.dark .site-footer .brand {
+  color: var(--major);
+}
+
+:root.dark .site-footer .author {
+  color: var(--major);
+}
+
+:root.dark .site-footer .author:hover {
+  color: var(--minor);
+}
+
+
+
+
+/* 🌗 Global Smooth Dark ↔ Light Transition */
+*,
+*::before,
+*::after {
+  transition:
+    background-color 0.6s ease,
+    color 0.6s ease,
+    border-color 0.6s ease,
+    box-shadow 0.6s ease,
+    fill 0.6s ease,
+    stroke 0.6s ease;
+}
+
+/* Optional: smooth gradient and overlay fade */
+body {
+  transition:
+    background 0.8s ease,
+    color 0.6s ease,
+    filter 0.6s ease;
+}
+
+/* ✨ Optional global fade effect on theme switch */
+html.dark,
+body.dark {
+  animation: fadeInTheme 0.5s ease-in-out;
+}
+
+@keyframes fadeInTheme {
+  from {
+    opacity: 0;
+    filter: brightness(0.8);
+  }
+  to {
+    opacity: 1;
+    filter: brightness(1);
+  }
+}
