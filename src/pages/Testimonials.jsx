@@ -1,5 +1,8 @@
 
+import { useTranslation } from 'react-i18next';
+
 export default function Testimonial(){
+  const { t } = useTranslation();
 
     return <section
   id="testimonial"
@@ -21,7 +24,7 @@ export default function Testimonial(){
         marginBottom: "2rem",
       }}
     >
-      What Our Customers Say
+      {t('testimonials.title')}
     </h2>
 
     <p
@@ -34,9 +37,7 @@ export default function Testimonial(){
         lineHeight: "1.8",
       }}
     >
-      Our commitment to quality and safety has earned us trust across India and
-      internationally. Hear what our satisfied customers have to say about our
-      products.
+      {t('testimonials.description')}
     </p>
 
     <div
@@ -50,54 +51,54 @@ export default function Testimonial(){
       <div
         style={{
           backgroundColor: "var(--surface)",
+          border: "1px solid rgba(0,0,0,0.1)",
           borderRadius: "14px",
-          boxShadow: "0 6px 18px var(--card-shadow)",
+          boxShadow: "0 6px 18px rgba(0,0,0,0.06)",
           padding: "24px",
-          borderLeft: "5px solid var(--major)",
+          borderTop: "4px solid var(--major)",
         }}
       >
         <p style={{ color: "var(--text)", lineHeight: "1.7", marginBottom: "1rem" }}>
-          “Bagh Chingari matches are simply the best! High quality, reliable, and safe
-          for my household. I trust this brand completely.”
+          {t('testimonials.t1.text')}
         </p>
-        <p style={{ fontWeight: "700", color: "var(--major)" }}>– Ramesh Kumar</p>
-        <p style={{ color: "var(--muted)", fontSize: "0.9rem" }}>Chennai, India</p>
+        <p style={{ fontWeight: "700", color: "var(--major)" }}>{t('testimonials.t1.author')}</p>
+        <p style={{ color: "var(--muted)", fontSize: "0.9rem" }}>{t('testimonials.t1.location')}</p>
       </div>
 
       {/* Testimonial 2 */}
       <div
         style={{
           backgroundColor: "var(--surface)",
+          border: "1px solid rgba(0,0,0,0.1)",
           borderRadius: "14px",
-          boxShadow: "0 6px 18px var(--card-shadow)",
+          boxShadow: "0 6px 18px rgba(0,0,0,0.06)",
           padding: "24px",
-          borderLeft: "5px solid var(--minor)",
+          borderTop: "4px solid var(--minor)",
         }}
       >
         <p style={{ color: "var(--text)", lineHeight: "1.7", marginBottom: "1rem" }}>
-          “The matti sticks are top-notch — smooth, consistent burn, and safe to use.
-          Highly recommend Bagh Chingari products for any household or business.”
+          {t('testimonials.t2.text')}
         </p>
-        <p style={{ fontWeight: "700", color: "var(--minor)" }}>– Anita Sharma</p>
-        <p style={{ color: "var(--muted)", fontSize: "0.9rem" }}>Mumbai, India</p>
+        <p style={{ fontWeight: "700", color: "var(--minor)" }}>{t('testimonials.t2.author')}</p>
+        <p style={{ color: "var(--muted)", fontSize: "0.9rem" }}>{t('testimonials.t2.location')}</p>
       </div>
 
       {/* Testimonial 3 */}
       <div
         style={{
           backgroundColor: "var(--surface)",
+          border: "1px solid rgba(0,0,0,0.1)",
           borderRadius: "14px",
-          boxShadow: "0 6px 18px var(--card-shadow)",
+          boxShadow: "0 6px 18px rgba(0,0,0,0.06)",
           padding: "24px",
-          borderLeft: "5px solid var(--patch)",
+          borderTop: "4px solid var(--patch)",
         }}
       >
         <p style={{ color: "var(--text)", lineHeight: "1.7", marginBottom: "1rem" }}>
-          “Excellent product quality and timely delivery. Bagh Chingari has never let us
-          down. Their attention to safety and detail is impressive.”
+          {t('testimonials.t3.text')}
         </p>
-        <p style={{ fontWeight: "700", color: "var(--patch)" }}>– John Mathew</p>
-        <p style={{ color: "var(--muted)", fontSize: "0.9rem" }}>Bangalore, India</p>
+        <p style={{ fontWeight: "700", color: "var(--patch)" }}>{t('testimonials.t3.author')}</p>
+        <p style={{ color: "var(--muted)", fontSize: "0.9rem" }}>{t('testimonials.t3.location')}</p>
       </div>
     </div>
   </div>

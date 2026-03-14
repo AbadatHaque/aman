@@ -1,0 +1,133 @@
+{
+  "header": {
+    "title": "Luminex Sparq Company",
+    "tagline": "Bagh Chingari — Igniting Trust with Quality Safety Matches",
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "product": "Product",
+      "testimonial": "Testimonial",
+      "faq": "FAQ",
+      "contact": "Contact"
+    }
+  },
+  "home": {
+    "title": "Luminex Sparq Company",
+    "description": "Welcome to <1>Bagh Chingari</1> — the creative extension of <3>Luminex Sparq Company</3>, one of India’s leading manufacturers and exporters of premium-quality safety matchboxes based in Sattur, Tamil Nadu. We’re dedicated to crafting <5>wooden matches</5>, <7>wax matches</7>, and <9>promotional matchboxes</9> that meet international quality and safety standards — lighting up lives across the world with sustainable craftsmanship and precision.",
+    "quality": {
+      "title": "Quality",
+      "desc": "Each matchbox is crafted with precision, ensuring durability, safety, and unmatched lighting performance."
+    },
+    "reach": {
+      "title": "Global Reach",
+      "desc": "From India to international markets, our matchboxes illuminate homes, businesses, and communities worldwide."
+    },
+    "excellence": {
+      "title": "Excellence",
+      "desc": "Our relentless pursuit of excellence has made us a trusted name in the safety match industry, known for reliability and craftsmanship."
+    }
+  },
+  "about": {
+    "title": "About Luminex Sparq Company",
+    "description": "<1>Luminex Sparq Company</1> — the creator of <3>Bagh Chingari</3> — stands as a trusted manufacturer of premium <5>safety matches</5> and <7>pure matti sticks</7>. Based in <9>Sattur, Tamil Nadu</9>, we combine craftsmanship, technology, and sustainability to deliver quality products that ignite trust and reliability.",
+    "mission": {
+      "title": "Our Mission",
+      "desc": "To deliver high-quality and safe products that bring reliability and satisfaction to our customers — both in India and across the globe."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "desc": "To be the most trusted and innovative brand in the safety match industry, setting new benchmarks in quality, sustainability, and customer service."
+    },
+    "values": {
+      "title": "Our Values",
+      "list": {
+        "1": "Quality first, always",
+        "2": "Safety and sustainability",
+        "3": "Innovation with integrity",
+        "4": "Customer satisfaction at the core"
+      }
+    },
+    "footer": "<strong>“Igniting Trust with Quality”</strong> — Bagh Chingari continues to light up lives with dedication and craftsmanship."
+  },
+  "product": {
+    "title": "Our Products",
+    "description": "At <1>Luminex Sparq Company</1>, we take pride in crafting products that combine quality, safety, and sustainability. Our products are trusted by customers across India and worldwide for their reliability and performance.",
+    "product1": {
+      "title": "Safety Matches",
+      "desc": "Our premium safety matches are designed to ignite with a single strike, ensuring efficiency and reliability. Manufactured with precision and quality control, they meet international safety standards and deliver a consistent flame every time.",
+      "features": {
+        "1": "Eco-friendly production",
+        "2": "Safe and reliable ignition",
+        "3": "Durable packaging for export"
+      }
+    },
+    "product2": {
+      "title": "Pure Matti Sticks",
+      "desc": "Our Matti sticks are crafted using high-grade raw materials for a smooth, long-lasting, and consistent burn. Each stick reflects our commitment to purity and craftsmanship.",
+      "features": {
+        "1": "Premium quality materials",
+        "2": "Clean and uniform burn",
+        "3": "Natural and chemical-free finish"
+      }
+    },
+    "footer": "Trusted by thousands, our products light homes, industries, and lives — safely and beautifully."
+  },
+  "testimonials": {
+    "title": "What Our Customers Say",
+    "description": "Our commitment to quality and safety has earned us trust across India and internationally. Hear what our satisfied customers have to say about our products.",
+    "t1": {
+      "text": "“Bagh Chingari matches are simply the best! High quality, reliable, and safe for my household. I trust this brand completely.”",
+      "author": "– Ramesh Kumar",
+      "location": "Chennai, India"
+    },
+    "t2": {
+      "text": "“The matti sticks are top-notch — smooth, consistent burn, and safe to use. Highly recommend Bagh Chingari products for any household or business.”",
+      "author": "– Anita Sharma",
+      "location": "Mumbai, India"
+    },
+    "t3": {
+      "text": "“Excellent product quality and timely delivery. Bagh Chingari has never let us down. Their attention to safety and detail is impressive.”",
+      "author": "– John Mathew",
+      "location": "Bangalore, India"
+    }
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "q1": {
+      "q": "Where are Bagh Chingari products manufactured?",
+      "a": "All our products are manufactured in Sattur, Tamil Nadu, India, under strict quality control and safety standards."
+    },
+    "q2": {
+      "q": "Do you export your products internationally?",
+      "a": "Yes, we export our premium safety matches and pure matti sticks to multiple countries worldwide, maintaining the highest quality standards."
+    },
+    "q3": {
+      "q": "Are the products safe for household use?",
+      "a": "Absolutely. Safety is our top priority. All matches and matti sticks are designed for safe and reliable use."
+    },
+    "q4": {
+      "q": "What is the minimum order quantity?",
+      "a": "We cater to both retail and bulk orders. Minimum order quantity varies depending on the product. Please contact us for details."
+    }
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "description": "Have a question or want to place an order? Fill out the form below or contact us directly via WhatsApp.",
+    "form": {
+      "name": "Your Name",
+      "email": "Your Email",
+      "subject": "Subject",
+      "message": "Your Message",
+      "send": "Send Message",
+      "sending": "Sending..."
+    },
+    "whatsapp": "📱 WhatsApp Us",
+    "success": "Message sent successfully!",
+    "error": "Failed to send message. Try again."
+  },
+  "footer": {
+    "copyright": "© {{year}}",
+    "brand": "Luminex Sparq Company — Bagh Chingari",
+    "crafted": "Crafted with ❤️ by"
+  }
+}

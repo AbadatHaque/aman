@@ -1,13 +1,16 @@
+import { useTranslation } from 'react-i18next';
+
 export default function Footer() {
+  const { t } = useTranslation();
   return (
     <footer className="site-footer">
       <div className="footer-content">
         <p>
-          © {new Date().getFullYear()}{" "}
-          <span className="brand">Luminex Sparq Company — Bagh Chingari</span>
+          {t('footer.copyright', { year: new Date().getFullYear() })}{" "}
+          <span className="brand">{t('footer.brand')}</span>
         </p>
         <p>
-          Crafted with ❤️ by{" "}
+          {t('footer.crafted')}{" "}
           <a
             href="https://www.linkedin.com/in/abadat-dev"
             target="_blank"

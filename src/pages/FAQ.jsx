@@ -1,26 +1,24 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function FAQ() {
+  const { t } = useTranslation();
   const faqs = [
     {
-      question: "Where are Bagh Chingari products manufactured?",
-      answer:
-        "All our products are manufactured in Sattur, Tamil Nadu, India, under strict quality control and safety standards.",
+      question: t("faq.q1.q"),
+      answer: t("faq.q1.a"),
     },
     {
-      question: "Do you export your products internationally?",
-      answer:
-        "Yes, we export our premium safety matches and pure matti sticks to multiple countries worldwide, maintaining the highest quality standards.",
+      question: t("faq.q2.q"),
+      answer: t("faq.q2.a"),
     },
     {
-      question: "Are the products safe for household use?",
-      answer:
-        "Absolutely. Safety is our top priority. All matches and matti sticks are designed for safe and reliable use.",
+      question: t("faq.q3.q"),
+      answer: t("faq.q3.a"),
     },
     {
-      question: "What is the minimum order quantity?",
-      answer:
-        "We cater to both retail and bulk orders. Minimum order quantity varies depending on the product. Please contact us for details.",
+      question: t("faq.q4.q"),
+      answer: t("faq.q4.a"),
     },
   ];
 
@@ -51,7 +49,7 @@ export default function FAQ() {
             marginBottom: "2rem",
           }}
         >
-          Frequently Asked Questions
+          {t("faq.title")}
         </h2>
 
         <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
@@ -60,15 +58,16 @@ export default function FAQ() {
               key={index}
               style={{
                 backgroundColor: "var(--surface)",
+                border: "1px solid rgba(0,0,0,0.1)",
                 borderRadius: "12px",
-                boxShadow: "0 6px 18px var(--card-shadow)",
+                boxShadow: "0 6px 18px rgba(0,0,0,0.06)",
                 padding: "20px",
-                borderLeft:
+                borderTop:
                   index % 3 === 0
-                    ? "5px solid var(--major)"
+                    ? "4px solid var(--major)"
                     : index % 3 === 1
-                    ? "5px solid var(--minor)"
-                    : "5px solid var(--patch)",
+                    ? "4px solid var(--minor)"
+                    : "4px solid var(--patch)",
                 cursor: "pointer",
                 transition: "all 0.3s ease",
               }}

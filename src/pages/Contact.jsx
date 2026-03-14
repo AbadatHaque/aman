@@ -1,8 +1,10 @@
 import emailjs from "@emailjs/browser";
-import React, {  useState, useRef } from 'react'
+import React, { useState, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 
 export default function Contact(){
-    const [loading, setLoading] = useState(false);
+  const { t } = useTranslation();
+  const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState("");
   const formRef = useRef();
 
@@ -19,12 +21,12 @@ export default function Contact(){
       .then(
         (result) => {
           setLoading(false);
-          setSuccess("Message sent successfully!");
+          setSuccess(t("contact.success"));
           formRef.current.reset();
         },
         (error) => {
           setLoading(false);
-          setSuccess("Failed to send message. Try again.");
+          setSuccess(t("contact.error"));
         }
       );
   };
@@ -48,7 +50,7 @@ export default function Contact(){
         marginBottom: "1.5rem",
       }}
     >
-      Get in Touch
+      {t("contact.title")}
     </h2>
 
     <p
@@ -60,8 +62,7 @@ export default function Contact(){
         lineHeight: "1.7",
       }}
     >
-      Have a question or want to place an order? Fill out the form below or
-      contact us directly via WhatsApp.
+      {t("contact.description")}
     </p>
 
     <form
@@ -77,7 +78,7 @@ export default function Contact(){
       <input
         type="text"
         name="name"
-        placeholder="Your Name"
+        placeholder={t("contact.form.name")}
         required
         style={{
           padding: "12px",
@@ -90,7 +91,7 @@ export default function Contact(){
       <input
         type="email"
         name="email"
-        placeholder="Your Email"
+        placeholder={t("contact.form.email")}
         required
         style={{
           padding: "12px",
@@ -103,7 +104,7 @@ export default function Contact(){
       <input
         type="text"
         name="subject"
-        placeholder="Subject"
+        placeholder={t("contact.form.subject")}
         required
         style={{
           padding: "12px",
@@ -115,7 +116,7 @@ export default function Contact(){
       />
       <textarea
         name="message"
-        placeholder="Your Message"
+        placeholder={t("contact.form.message")}
         required
         style={{
           padding: "12px",
@@ -142,7 +143,7 @@ export default function Contact(){
             flex: "1",
           }}
         >
-         {loading ? "Sending..." : "Send Message"}
+         {loading ? t("contact.form.sending") : t("contact.form.send")}
         </button>
 
 
@@ -165,7 +166,7 @@ export default function Contact(){
             transition: "all 0.3s ease",
           }}
         >
-          📱 WhatsApp Us
+          {t("contact.whatsapp")}
         </a>
       </div>
        {success && <p>{success}</p>}

@@ -1,8 +1,10 @@
-import React, { useEffect, useState, useRef } from 'react'
-import pngLogo from "../../public/bg_remove_logo.png"
+import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import pngLogo from "../../public/bg_remove_logo.png";
 
 
  export default  function Header() {
+  const { t, i18n } = useTranslation();
   const [menuOpen, setMenuOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
 const [dark, setDark] = useState(() => {
@@ -64,10 +66,10 @@ const [dark, setDark] = useState(() => {
         <img src={pngLogo} alt="Logo" className="logo" style={{ width: 48, height: 48 }} />
         <div>
           <h1 className="site-title" style={{ margin: 0, fontSize: "1.1rem", color: "var(--major)" }}>
-            Luminex Sparq Company
+            {t('header.title')}
           </h1>
           <p className="site-tag" style={{ margin: 0, fontSize: "0.85rem", color: "var(--muted)" }}>
-            Bagh Chingari — Igniting Trust with Quality Safety Matches
+            {t('header.tagline')}
           </p>
         </div>
       </div>
@@ -75,7 +77,7 @@ const [dark, setDark] = useState(() => {
       {/* Hamburger for mobile */}
       <button
         onClick={() => setMenuOpen(!menuOpen)}
-        className="hamburger"
+        className={`hamburger ${menuOpen ? 'open' : ''}`}
       >
         <span
         />
@@ -95,17 +97,34 @@ const [dark, setDark] = useState(() => {
             href={`#${id}`}
             className={activeSection === id ? "active" : ""}
           >
-            {id.charAt(0).toUpperCase() + id.slice(1)}
+            {t(`header.nav.${id}`)}
           </a>
         ))}
       
       </nav>
 
-      {/* Theme toggle */}
-<div className="controls nav-links">
-  <button
-    className="theme-toggle"
-    onClick={() => setDark((d) => !d)}
+      {/* Language Switcher and Theme Toggle */}
+      <div className="controls nav-links" style={{ gap: '1rem' }}>
+        <select 
+          onChange={(e) => i18n.changeLanguage(e.target.value)}
+          value={i18n.language}
+          style={{
+            background: 'transparent',
+            color: 'var(--major)',
+            border: '1px solid var(--muted)',
+            padding: '0.2rem 0.5rem',
+            borderRadius: '4px',
+            cursor: 'pointer'
+          }}
+        >
+          <option value="en">English</option>
+          <option value="hi">हिंदी</option>
+          <option value="bn">বাংলা</option>
+        </select>
+
+        <button
+          className="theme-toggle"
+          onClick={() => setDark((d) => !d)}
     aria-pressed={dark}
     aria-label="Toggle dark mode"
   >
@@ -145,11 +164,29 @@ const [dark, setDark] = useState(() => {
             className={activeSection === id ? "active" : ""}
             onClick={() => setMenuOpen(false)}
           >
-            {id.charAt(0).toUpperCase() + id.slice(1)}
+            {t(`header.nav.${id}`)}
           </a>
         ))}
-          <a>
-         <button
+        <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', gap: '1rem', padding: '1rem 0 0.5rem', borderTop: '1px solid rgba(0,0,0,0.05)' }}>
+          <select 
+            onChange={(e) => i18n.changeLanguage(e.target.value)}
+            value={i18n.language}
+            style={{
+              background: 'transparent',
+              color: 'var(--major)',
+              border: '1px solid var(--muted)',
+              padding: '0.4rem 0.5rem',
+              borderRadius: '6px',
+              flex: 1,
+              fontSize: '1rem',
+              cursor: 'pointer'
+            }}
+          >
+            <option value="en">English</option>
+            <option value="hi">हिंदी</option>
+            <option value="bn">বাংলা</option>
+          </select>
+          <button
     className="theme-toggle"
     onClick={() => setDark((d) => !d)}
     aria-pressed={dark}
@@ -176,7 +213,8 @@ const [dark, setDark] = useState(() => {
         <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z"/>
       </svg>
     )}
-  </button></a>
+          </button>
+        </div>
         </div>
 
       )}
