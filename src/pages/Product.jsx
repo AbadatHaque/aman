@@ -73,7 +73,7 @@ export default function Product() {
           }}
 
         >
-          <img style={{opacity:"1", objectFit:"cover", width:"100%", height:"100%"}} src={product1Image} alt="product image" />
+          <img style={{opacity:"1", objectFit:"cover", width:"100%", height:"100%"}} src={product1Image} alt="Premium Wooden Safety Matches by Bagh Chingari" />
         </div>
         <div style={{ padding: "24px" }}>
           <h3 style={{ color: "var(--major)", fontSize: "1.4rem" }}>
@@ -121,7 +121,7 @@ export default function Product() {
             borderBottom: "4px solid var(--minor)",
           }}
         >
-           <img  style={{opacity:"1", width:"100%", height:"100%",  }} src={product2Image} alt="product image" />
+           <img  style={{opacity:"1", width:"100%", height:"100%",  }} src={product2Image} alt="Premium Wax Safety Matches by Bagh Chingari" />
         </div>
         <div style={{ padding: "24px" }}>
           <h3 style={{ color: "var(--minor)", fontSize: "1.4rem" }}>
