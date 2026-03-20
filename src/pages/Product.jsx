@@ -7,7 +7,7 @@ export default function Product() {
   const { t } = useTranslation();
     return   <section
   id="product"
-  className="product-section"
+  className="reveal"
   style={{
     padding: "80px 20px",
     backgroundColor: "var(--bg)",
@@ -17,12 +17,13 @@ export default function Product() {
 >
   <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
     <h2
+      className="gradient-text"
       style={{
         fontSize: "2.5rem",
         color: "var(--major)",
         fontWeight: "700",
         textAlign: "center",
-        marginBottom: "2rem",
+        marginBottom: "1rem",
       }}
     >
       {t('product.title')}
@@ -55,15 +56,11 @@ export default function Product() {
     >
       {/* Product 1 */}
       <div
+        className="card product-card reveal-left"
         style={{
-          backgroundColor: "var(--surface)",
-          border: "1px solid rgba(0,0,0,0.1)",
-          borderRadius: "14px",
-          boxShadow: "0 6px 18px rgba(0,0,0,0.06)",
+          padding: 0,
           overflow: "hidden",
-          transition: "transform 0.3s ease",
         }}
-        className="product-card"
       >
         <div
           style={{
@@ -104,15 +101,12 @@ export default function Product() {
 
       {/* Product 2 */}
       <div
+        className="card product-card"
         style={{
-          backgroundColor: "var(--surface)",
-          border: "1px solid rgba(0,0,0,0.1)",
-          borderRadius: "14px",
-          boxShadow: "0 6px 18px rgba(0,0,0,0.06)",
+          padding: 0,
           overflow: "hidden",
-          transition: "transform 0.3s ease",
+          borderTopColor: "var(--minor)",
         }}
-        className="product-card"
       >
         <div
           style={{

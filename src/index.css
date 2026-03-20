@@ -11,7 +11,11 @@
   --surface: #f7f7f8;
   --text: #111827;
   --muted: #6b6b6b;
-  --card-shadow: rgba(0, 0, 0, 0.06);
+  --card-shadow: rgba(0, 0, 0, 0.08);
+  --premium-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1), 0 4px 10px -5px rgba(0, 0, 0, 0.04);
+  --3d-transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+  --3d-transform-hover: perspective(1000px) rotateX(4deg) rotateY(4deg) translateY(-10px);
+  --3d-press: scale(0.96) translateY(2px);
 
   /* Typography */
   --font-serif: 'Playfair Display', serif;
@@ -26,6 +30,7 @@
   --text: #e6eef6;
   --muted: #9fb0c7;
   --card-shadow: rgba(0, 0, 0, 0.6);
+  --premium-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
 
   /* tweak brand colors slightly for contrast */
   --major: #3fb56b;
@@ -78,15 +83,28 @@ h6,
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem 2rem;
-  background: var(--bg);
-  border-bottom: 3px double var(--minor);
-  /* Classic double border */
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+:root.dark .site-header {
+  background: rgba(11, 16, 32, 0.75);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .brand {
   display: flex;
   gap: 1rem;
   align-items: center;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.brand:hover {
+  transform: perspective(1000px) rotateX(10deg) rotateY(10deg);
 }
 
 .logo {
@@ -146,19 +164,29 @@ h6,
 
 
 .hero {
-  padding: 3rem;
-  border: 1px solid var(--minor);
-  background: var(--surface);
-  border-radius: 16px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
-  text-align: center;
+  padding: 4rem 2rem;
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  background: linear-gradient(-45deg, var(--surface), var(--bg), var(--surface));
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  box-shadow: var(--premium-shadow);
+  border: 1px solid rgba(0,0,0,0.05);
 }
 
-.hero h2 {
-  margin-top: 0;
-  color: var(--major);
-  text-transform: uppercase;
-  letter-spacing: 1px;
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, var(--major) 0%, var(--minor) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
 }
 
 .cta {
@@ -167,17 +195,24 @@ h6,
   padding: 0.8rem 1.5rem;
   border: 1px solid var(--major);
   border-radius: 8px;
-  background: transparent;
-  color: var(--major);
+  background: var(--major);
+  color: var(--bg);
   text-decoration: none;
   font-weight: 700;
   text-transform: uppercase;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: var(--premium-shadow);
 }
 
 .cta:hover {
-  background: var(--major);
-  color: var(--bg);
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
+  filter: brightness(1.1);
+}
+
+.cta:active {
+  transform: var(--3d-press);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 .features {
@@ -190,22 +225,54 @@ h6,
 .card {
   padding: 2rem;
   background: var(--surface);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
   border-top: 4px solid var(--major);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-  transition: background 0.3s ease, transform 0.3s ease;
+  box-shadow: var(--premium-shadow);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.card:hover {
+  background: var(--bg);
+  transform: var(--3d-transform-hover);
+  box-shadow: 0 35px 70px -15px rgba(0, 0, 0, 0.2), 0 0 20px rgba(46, 125, 50, 0.2);
+  border-color: var(--major);
+  border-top-width: 6px;
+}
+
+/* Scroll Reveal Utility */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+}
+
+.reveal-left.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.card:active {
+  transform: var(--3d-press);
 }
 
 .card h3 {
   margin: 0 0 1rem 0;
   color: var(--major);
   font-size: 1.3rem;
-}
-
-.card:hover {
-  background: var(--bg);
-  transform: translateY(-3px);
 }
 
 .card.patch {
@@ -331,16 +398,16 @@ button:focus {
 /* Responsive tweaks */
 @media (max-width:600px) {
   .site-header {
-    padding: 0.75rem;
+    padding: 0.75rem 1rem;
   }
 
   .logo {
-    width: 40px;
-    height: 40px
+    width: 38px;
+    height: 38px
   }
 
   .site-title {
-    font-size: 1rem
+    font-size: 0.95rem
   }
 
   .site-tag {
@@ -367,7 +434,9 @@ button:focus {
   top: 100%;
   left: 0;
   right: 0;
-  background-color: var(--bg);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   display: flex;
   flex-direction: column;
   padding: 1.5rem 1rem;
@@ -376,10 +445,15 @@ button:focus {
   opacity: 0;
   transform: translateY(-20px);
   pointer-events: none;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   border-top: 1px solid rgba(0, 0, 0, 0.05);
-  box-shadow: 0 4px 12px var(--card-shadow);
-  border-radius: 0 0 12px 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 24px 24px;
+}
+
+:root.dark .mobile-menu {
+  background: rgba(15, 23, 36, 0.9);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 /* Show menu */
@@ -423,10 +497,9 @@ button:focus {
 }
 
 .theme-toggle svg {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   transition: all 0.3s ease;
-  fill: var(--major);
 }
 
 
@@ -512,7 +585,7 @@ button:focus {
 }
 
 .product-card div img:hover {
-  transform: scale(1.05);
+  transform: scale(1.1) rotate(1deg);
 }
 
 
@@ -606,6 +679,7 @@ button:focus {
   margin: 0;
   font-size: 0.95rem;
   letter-spacing: 0.02em;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .brand {

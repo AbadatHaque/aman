@@ -31,7 +31,7 @@ export default function FAQ() {
   return (
     <section
       id="faq"
-      className="faq-section"
+      className="reveal"
       style={{
         padding: "80px 20px",
         backgroundColor: "var(--bg)",
@@ -41,9 +41,9 @@ export default function FAQ() {
     >
       <div style={{ maxWidth: "900px", margin: "0 auto" }}>
         <h2
+          className="gradient-text"
           style={{
             fontSize: "2.5rem",
-            color: "var(--major)",
             fontWeight: "700",
             textAlign: "center",
             marginBottom: "2rem",
@@ -56,12 +56,8 @@ export default function FAQ() {
           {faqs.map((faq, index) => (
             <div
               key={index}
+              className="card reveal"
               style={{
-                backgroundColor: "var(--surface)",
-                border: "1px solid rgba(0,0,0,0.1)",
-                borderRadius: "12px",
-                boxShadow: "0 6px 18px rgba(0,0,0,0.06)",
-                padding: "20px",
                 borderTop:
                   index % 3 === 0
                     ? "4px solid var(--major)"
@@ -69,7 +65,7 @@ export default function FAQ() {
                     ? "4px solid var(--minor)"
                     : "4px solid var(--patch)",
                 cursor: "pointer",
-                transition: "all 0.3s ease",
+                padding: "20px",
               }}
               onClick={() => toggleFAQ(index)}
             >

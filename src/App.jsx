@@ -7,6 +7,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
 import Product from './pages/Product';
+import CustomBrand from './pages/CustomBrand';
 import Testimonial from './pages/Testimonials';
 import Contact from './pages/Contact';
 
@@ -22,6 +23,7 @@ export default function App() {
             <Home/>
             <About/>
              <Product/>
+            <CustomBrand/>
             <Testimonial/>
                     <FAQ/>
             <Contact/>

@@ -55,25 +55,10 @@ export default function Home() {
           }}
         >
           <div
+            className="card reveal"
             style={{
-              backgroundColor: "var(--surface)",
-              border: "1px solid rgba(0,0,0,0.1)",
-              borderTop: "4px solid var(--major)",
-              borderRadius: "12px",
-              padding: "20px",
               width: "260px",
-              boxShadow: "0 6px 18px rgba(0,0,0,0.06)",
-              transition: "transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = "var(--bg)";
-              e.currentTarget.style.transform = "translateY(-5px)";
-              e.currentTarget.style.boxShadow = "0 8px 20px rgba(0,0,0,0.08)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = "var(--surface)";
-              e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.boxShadow = "0 6px 18px rgba(0,0,0,0.06)";
+              borderTopColor: "var(--major)",
             }}
           >
             <h3 style={{ color: "var(--minor)", marginBottom: "0.5rem" }}>
@@ -85,25 +70,10 @@ export default function Home() {
           </div>
 
           <div
+            className="card reveal"
             style={{
-              backgroundColor: "var(--surface)",
-              border: "1px solid rgba(0,0,0,0.1)",
-              borderTop: "4px solid var(--minor)",
-              borderRadius: "12px",
-              padding: "20px",
               width: "260px",
-              boxShadow: "0 6px 18px rgba(0,0,0,0.06)",
-              transition: "transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = "var(--bg)";
-              e.currentTarget.style.transform = "translateY(-5px)";
-              e.currentTarget.style.boxShadow = "0 8px 20px rgba(0,0,0,0.08)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = "var(--surface)";
-              e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.boxShadow = "0 6px 18px rgba(0,0,0,0.06)";
+              borderTopColor: "var(--minor)",
             }}
           >
             <h3 style={{ color: "var(--major)", marginBottom: "0.5rem" }}>
@@ -115,25 +85,10 @@ export default function Home() {
           </div>
 
           <div
+            className="card reveal"
             style={{
-              backgroundColor: "var(--surface)",
-              border: "1px solid rgba(0,0,0,0.1)",
-              borderTop: "4px solid var(--patch)",
-              borderRadius: "12px",
-              padding: "20px",
               width: "260px",
-              boxShadow: "0 6px 18px rgba(0,0,0,0.06)",
-              transition: "transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = "var(--bg)";
-              e.currentTarget.style.transform = "translateY(-5px)";
-              e.currentTarget.style.boxShadow = "0 8px 20px rgba(0,0,0,0.08)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = "var(--surface)";
-              e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.boxShadow = "0 6px 18px rgba(0,0,0,0.06)";
+              borderTopColor: "var(--patch)",
             }}
           >
             <h3 style={{ color: "var(--patch)", marginBottom: "0.5rem" }}>

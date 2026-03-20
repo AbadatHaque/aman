@@ -4,7 +4,7 @@ export default function About() {
     const { t } = useTranslation();
     return <section
   id="about"
-  className="about-section"
+  className="reveal"
   style={{
     padding: "80px 20px",
     backgroundColor: "var(--bg)",
@@ -14,9 +14,9 @@ export default function About() {
 >
   <div style={{ maxWidth: "1000px", margin: "0 auto" }}>
     <h2
+      className="gradient-text"
       style={{
         fontSize: "2.5rem",
-        color: "var(--major)",
         fontWeight: "700",
         textAlign: "center",
         marginBottom: "2rem",
@@ -52,13 +52,9 @@ export default function About() {
       }}
     >
       <div
+        className="card reveal"
         style={{
-          backgroundColor: "var(--surface)",
-          border: "1px solid rgba(0,0,0,0.1)",
-          borderTop: "4px solid var(--major)",
-          borderRadius: "12px",
-          padding: "24px",
-          boxShadow: "0 6px 18px rgba(0,0,0,0.06)",
+          borderTopColor: "var(--major)",
         }}
       >
         <h3 style={{ color: "var(--major)" }}>{t('about.mission.title')}</h3>
@@ -68,13 +64,9 @@ export default function About() {
       </div>
 
       <div
+        className="card reveal"
         style={{
-          backgroundColor: "var(--surface)",
-          border: "1px solid rgba(0,0,0,0.1)",
-          borderTop: "4px solid var(--minor)",
-          borderRadius: "12px",
-          padding: "24px",
-          boxShadow: "0 6px 18px rgba(0,0,0,0.06)",
+          borderTopColor: "var(--minor)",
         }}
       >
         <h3 style={{ color: "var(--minor)" }}>{t('about.vision.title')}</h3>
@@ -84,13 +76,9 @@ export default function About() {
       </div>
 
       <div
+        className="card reveal"
         style={{
-          backgroundColor: "var(--surface)",
-          border: "1px solid rgba(0,0,0,0.1)",
-          borderTop: "4px solid var(--patch)",
-          borderRadius: "12px",
-          padding: "24px",
-          boxShadow: "0 6px 18px rgba(0,0,0,0.06)",
+          borderTopColor: "var(--patch)",
         }}
       >
         <h3 style={{ color: "var(--patch)" }}>{t('about.values.title')}</h3>

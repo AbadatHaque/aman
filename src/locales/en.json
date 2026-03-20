@@ -8,6 +8,7 @@
       "product": "Product",
       "testimonial": "Testimonial",
       "faq": "FAQ",
+      "custom": "Custom Brand",
       "contact": "Contact"
     }
   },
@@ -90,6 +91,18 @@
       "author": "– John Mathew",
       "location": "Bangalore, India"
     }
+  },
+  "custom": {
+    "title": "Custom Branding & OEM",
+    "description": "Stand out with your own identity! We provide complete <1>OEM and Private Label</1> solutions. Whatever your brand name or matchbox specification, we manufacture it with precision just for you.",
+    "features": {
+      "title": "What We Offer:",
+      "1": "Your Own Brand & Logo",
+      "2": "Custom Box Dimensions",
+      "3": "Choice of Matchbox Type (Wooden/Wax)",
+      "4": "High-Quality Multi-Color Printing"
+    },
+    "cta": "Start Your Brand"
   },
   "faq": {
     "title": "Frequently Asked Questions",

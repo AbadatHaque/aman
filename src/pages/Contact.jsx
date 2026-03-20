@@ -32,7 +32,7 @@ export default function Contact(){
   };
     return        <section
   id="contact"
-  className="contact-section"
+  className="reveal"
   style={{
     padding: "80px 20px",
     backgroundColor: "var(--bg)",
@@ -42,9 +42,9 @@ export default function Contact(){
 >
   <div style={{ maxWidth: "700px", margin: "0 auto" }}>
     <h2
+      className="gradient-text"
       style={{
         fontSize: "2.5rem",
-        color: "var(--major)",
         fontWeight: "700",
         textAlign: "center",
         marginBottom: "1.5rem",
@@ -132,15 +132,16 @@ export default function Contact(){
 
         <button
           type="submit"
+          className="cta"
           style={{
             backgroundColor: "var(--major)",
             color: "#fff",
-            padding: "12px 20px",
             borderRadius: "8px",
             fontWeight: "600",
             border: "none",
             cursor: "pointer",
             flex: "1",
+            margin: 0,
           }}
         >
          {loading ? t("contact.form.sending") : t("contact.form.send")}
@@ -152,18 +153,18 @@ export default function Contact(){
           href="https://wa.me/919360888472"
           target="_blank"
           rel="noopener noreferrer"
+          className="cta"
           style={{
             display: "inline-flex",
             alignItems: "center",
             justifyContent: "center",
             backgroundColor: "var(--minor)",
             color: "var(--bg)",
-            padding: "12px 20px",
             borderRadius: "8px",
             fontWeight: "600",
             textDecoration: "none",
             flex: "1",
-            transition: "all 0.3s ease",
+            margin: 0,
           }}
         >
           {t("contact.whatsapp")}

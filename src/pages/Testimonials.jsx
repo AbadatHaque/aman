@@ -6,7 +6,7 @@ export default function Testimonial(){
 
     return <section
   id="testimonial"
-  className="testimonial-section"
+  className="reveal"
   style={{
     padding: "80px 20px",
     backgroundColor: "var(--bg)",
@@ -16,9 +16,9 @@ export default function Testimonial(){
 >
   <div style={{ maxWidth: "1000px", margin: "0 auto" }}>
     <h2
+      className="gradient-text"
       style={{
         fontSize: "2.5rem",
-        color: "var(--major)",
         fontWeight: "700",
         textAlign: "center",
         marginBottom: "2rem",
@@ -49,13 +49,10 @@ export default function Testimonial(){
     >
       {/* Testimonial 1 */}
       <div
+        className="card reveal"
         style={{
-          backgroundColor: "var(--surface)",
-          border: "1px solid rgba(0,0,0,0.1)",
-          borderRadius: "14px",
-          boxShadow: "0 6px 18px rgba(0,0,0,0.06)",
+          borderTopColor: "var(--major)",
           padding: "24px",
-          borderTop: "4px solid var(--major)",
         }}
       >
         <p style={{ color: "var(--text)", lineHeight: "1.7", marginBottom: "1rem" }}>
@@ -67,13 +64,10 @@ export default function Testimonial(){
 
       {/* Testimonial 2 */}
       <div
+        className="card reveal"
         style={{
-          backgroundColor: "var(--surface)",
-          border: "1px solid rgba(0,0,0,0.1)",
-          borderRadius: "14px",
-          boxShadow: "0 6px 18px rgba(0,0,0,0.06)",
+          borderTopColor: "var(--minor)",
           padding: "24px",
-          borderTop: "4px solid var(--minor)",
         }}
       >
         <p style={{ color: "var(--text)", lineHeight: "1.7", marginBottom: "1rem" }}>
@@ -85,13 +79,10 @@ export default function Testimonial(){
 
       {/* Testimonial 3 */}
       <div
+        className="card reveal"
         style={{
-          backgroundColor: "var(--surface)",
-          border: "1px solid rgba(0,0,0,0.1)",
-          borderRadius: "14px",
-          boxShadow: "0 6px 18px rgba(0,0,0,0.06)",
+          borderTopColor: "var(--patch)",
           padding: "24px",
-          borderTop: "4px solid var(--patch)",
         }}
       >
         <p style={{ color: "var(--text)", lineHeight: "1.7", marginBottom: "1rem" }}>
