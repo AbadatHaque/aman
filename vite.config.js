@@ -4,6 +4,7 @@ import tailwind from '@tailwindcss/vite' // <--- this import
 import path from 'path'
 export default defineConfig({
   plugins: [react()],
+   base: "/aman/",
    resolve: {
 // alias: {
 // '@': '/src'
