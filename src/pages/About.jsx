@@ -38,7 +38,7 @@ export default function About() {
         <strong>Luminex Sparq Company</strong> — the creator of{" "}
         <strong>Bagh Chingari</strong> — stands as a trusted manufacturer of
         premium <strong>safety matches</strong> and <strong>pure matti sticks</strong>.
-        Based in <strong>Sattur, Tamil Nadu</strong>, we combine craftsmanship,
+        Based in <strong>Kovilpatti, Tamil Nadu</strong>, we combine craftsmanship,
         technology, and sustainability to deliver quality products that ignite
         trust and reliability.
       </Trans>

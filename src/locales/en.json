@@ -14,7 +14,7 @@
   },
   "home": {
     "title": "Luminex Sparq Company",
-    "description": "Welcome to <1>Bagh Chingari</1> — the creative extension of <3>Luminex Sparq Company</3>, one of India’s leading manufacturers and exporters of premium-quality safety matchboxes based in Sattur, Tamil Nadu. We’re dedicated to crafting <5>wooden matches</5>, <7>wax matches</7>, and <9>promotional matchboxes</9> that meet international quality and safety standards — lighting up lives across the world with sustainable craftsmanship and precision.",
+    "description": "Welcome to <1>Bagh Chingari</1> — the creative extension of <3>Luminex Sparq Company</3>, one of India’s leading manufacturers and exporters of premium-quality safety matchboxes based in Kovilpatti, Tamil Nadu. We’re dedicated to crafting <5>wooden matches</5>, <7>wax matches</7>, and <9>promotional matchboxes</9> that meet international quality and safety standards — lighting up lives across the world with sustainable craftsmanship and precision.",
     "quality": {
       "title": "Quality",
       "desc": "Each matchbox is crafted with precision, ensuring durability, safety, and unmatched lighting performance."
@@ -30,7 +30,7 @@
   },
   "about": {
     "title": "About Luminex Sparq Company",
-    "description": "<1>Luminex Sparq Company</1> — the creator of <3>Bagh Chingari</3> — stands as a trusted manufacturer of premium <5>safety matches</5> and <7>pure matti sticks</7>. Based in <9>Sattur, Tamil Nadu</9>, we combine craftsmanship, technology, and sustainability to deliver quality products that ignite trust and reliability.",
+    "description": "<1>Luminex Sparq Company</1> — the creator of <3>Bagh Chingari</3> — stands as a trusted manufacturer of premium <5>safety matches</5> and <7>pure matti sticks</7>. Based in <9>Kovilpatti, Tamil Nadu</9>, we combine craftsmanship, technology, and sustainability to deliver quality products that ignite trust and reliability.",
     "mission": {
       "title": "Our Mission",
       "desc": "To deliver high-quality and safe products that bring reliability and satisfaction to our customers — both in India and across the globe."
@@ -108,7 +108,7 @@
     "title": "Frequently Asked Questions",
     "q1": {
       "q": "Where are Bagh Chingari products manufactured?",
-      "a": "All our products are manufactured in Sattur, Tamil Nadu, India, under strict quality control and safety standards."
+      "a": "All our products are manufactured in Kovilpatti, Tamil Nadu, India, under strict quality control and safety standards."
     },
     "q2": {
       "q": "Do you export your products internationally?",
@@ -139,8 +139,11 @@
     "error": "Failed to send message. Try again."
   },
   "footer": {
+    "brand": "Luminex Sparq Company",
     "copyright": "© {{year}}",
-    "brand": "Luminex Sparq Company — Bagh Chingari",
-    "crafted": "Crafted with ❤️ by"
+    "crafted": "Premium Experience by",
+    "quick_links": "Quick Links",
+    "products": "Our Products",
+    "gstin": "GSTIN: 33EOBPS4236D1Z6"
   }
 }

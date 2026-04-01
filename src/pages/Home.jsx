@@ -38,7 +38,7 @@ export default function Home() {
             Welcome to <strong>Bagh Chingari</strong> — the creative extension of{" "}
             <strong>Luminex Sparq Company</strong>, one of India’s leading
             manufacturers and exporters of premium-quality safety matchboxes based
-            in Sattur, Tamil Nadu.
+            in Kovilpatti, Tamil Nadu.
             We’re dedicated to crafting <strong>wooden matches</strong>,{" "}
             <strong>wax matches</strong>, and <strong>promotional matchboxes</strong>{" "}
             that meet international quality and safety standards — lighting up
